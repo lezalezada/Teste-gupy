@@ -1,0 +1,64 @@
+Exemplo de código em Python para calcular a sequência de Fibonacci e verificar se um número pertence a ela:
+
+num = int(input("Informe um número: "))
+fibonacci = [0, 1]
+
+while fibonacci[-1] < num:
+    fibonacci.append(fibonacci[-1] + fibonacci[-2])
+
+if num in fibonacci:
+    print(f"{num} pertence à sequência de Fibonacci!")
+else:
+    print(f"{num} não pertence à sequência de Fibonacci!")
+
+Exemplo de código em Python para calcular as informações de faturamento diário de uma distribuidora a partir de um arquivo JSON:
+python
+Copy code
+import json
+
+# Abrir arquivo JSON com dados de faturamento
+with open("faturamento.json", "r") as f:
+    faturamento = json.load(f)
+
+# Calcular o menor e o maior valor de faturamento
+minimo = min(faturamento)
+maximo = max(faturamento)
+
+# Calcular a média mensal de faturamento
+media = sum(faturamento) / len(faturamento)
+
+# Contar quantos dias tiveram faturamento acima da média
+acima_media = len([f for f in faturamento if f > media])
+
+# Imprimir resultados
+print(f"Menor valor de faturamento: R${minimo:.2f}")
+print(f"Maior valor de faturamento: R${maximo:.2f}")
+print(f"Dias com faturamento acima da média: {acima_media}")
+Exemplo de código em Python para calcular o percentual de representação de cada estado no faturamento mensal de uma distribuidora:
+python
+Copy code
+faturamento = {
+    "SP": 67836.43,
+    "RJ": 36678.66,
+    "MG": 29229.88,
+    "ES": 27165.48,
+    "Outros": 19849.53
+}
+
+total = sum(faturamento.values())
+
+for estado, valor in faturamento.items():
+    percentual = (valor / total) * 100
+    print(f"{estado}: {percentual:.2f}%")
+Exemplo de código em Python para inverter os caracteres de um string sem usar funções prontas:
+python
+Copy code
+texto = input("Digite um texto: ")
+inverso = ""
+
+for i in range(len(texto) - 1, -1, -1):
+    inverso += texto[i]
+
+print(inverso)
+
+
